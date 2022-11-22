@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = 'UTF-8'>
+        <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0'>
+        <title>Sistema de despliegue de devContainers</title>
+        <link rel="stylesheet" type="text/css" href="static/css/Bootstrap1.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/Bootstrap2.css">
+        <link rel="stylesheet" href="/static/css/css.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        <link rel="shortcut icon" href="/static/images/logoChico.png"/>
+    </head>
+
+    <body class="body ">
+    <div class="wrapper wrapper-navbar ">
+    <div class="wrapper-content">
+        <div class="wrapper-content__body">
+            <div id="block_2">
+                    <div class="container">
+                        <div class="row sign-up-center-alignment">
+                            <div class="col-lg-8">
+                                <div class="component_card">
+                                    <div class="card">
+                                        
+                                        <div class="center">
+                                            <a href="/"><img src="/static/images/logoGrande.png" class="center" width="250"></a>
+                                        </div>
+                                         
+                                        <form action="/createContainer" method="POST" name="formulario" id="formulario">
+                                                {% block content %}
+                                                {% if sendMessage == True %}
+                                                <div class="center">
+                                                    <h5 class="center">{{mensaje}}</h6>
+                                                </div>
+                                                {% else %}
+                                                {% endif %}
+                                                {% endblock content %}
+                                            
+                                                <div class="form-group">
+                                                    <label for="containerImage">Tipo de Contenedor</label>
+                                                    <select id="containerImage" name="containerImage" class="">
+                                                        <option selected>Python</option>
+                                                        <option>JavaScript</option>
+                                                        <option>C/C++</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Nombre del Contenedor</label>
+                                                    <input type="text" class="form-control" id="containerName" name="containerName" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Número de CPUs</label>
+                                                    <input type="text" class="form-control" id="containerCPU" name="containerCPU" minlength="1" maxlength="1" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Cantidad de RAM</label>
+                                                    <input type="text" class="form-control" id="containerMemory" name="containerMemory" minlength="3" maxlength="4" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Contraseña del Contenedor</label>
+                                                    <input type="password" class="form-control" id="containerPassword" name="containerPassword" minlength="5" maxlength="32" required>
+                                                </div>
+
+                                            <div class="component_button_submit">
+                                                <div class="">
+                                                    <div class="buttonStyle">
+                                                        <p class="btn-space">
+                                                            <input type="submit" class="btn btn-block btn-big-primary btn-space" value="Crear Contenedor">
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+
+</html>
