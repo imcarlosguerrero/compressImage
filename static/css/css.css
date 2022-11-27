@@ -1,0 +1,17 @@
+.center {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+  };
+  
+  .buttonStyle {
+      margin-top: 25px;
+  }
+  
+  .btn-space {
+      margin-top: 25px;
+  };
+  
+  .fontWeight {
+      font-weight: 600;
+  }
